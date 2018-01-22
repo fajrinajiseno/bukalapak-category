@@ -1,3 +1,11 @@
+## step install:
+- composer install
+- cp .env.example .env
+- php artisan key:generate
+- sudo php artisan serve --port=8000
+- http://127.0.0.1:8000/
+- vue and sass assets -> resources/assets
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
