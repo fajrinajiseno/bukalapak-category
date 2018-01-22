@@ -5,8 +5,6 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-
 window.Vue = require('vue');
 
 /**
@@ -15,7 +13,11 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('wrapperkategori', require('./components/WrapperKategori.vue'));
+Vue.component('wrappersubkategori', require('./components/WrapperSubKategori.vue'));
+Vue.component('wrappersubsubkategori', require('./components/WrapperSubSubKategori.vue'));
+Vue.component('kategori', require('./components/Kategori.vue'));
+Vue.component('subkategori', require('./components/SubKategori.vue'));
 
 const app = new Vue({
     el: '#app'

@@ -7,3 +7,109 @@
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+@mixin sprite-bg($y-postition) {
+  background-image: url(/images/sprite.png);
+  background-repeat: no-repeat;
+  background-position: 50% $y-postition;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.panel-wrapper {
+  width: 50%;
+  margin: 5rem auto;
+  .panel-title {
+    height: 55px;
+    background: #d90646;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    & > div {
+      display: table-cell;
+      vertical-align: middle;
+      float: none;
+    }
+    .logo {
+      background-image: url(/images/logo.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 55px;
+      background-size: 55%;
+    }
+    .refresh {
+      @include sprite-bg(0%);
+      float: right;
+      margin-right: 10px;
+    }
+  }
+  .panel {
+    height: 500px;
+    overflow: auto;
+    .panel-heading {
+      color: #4c4c4c;
+      font-weight: 500;
+    }
+    .name a{
+      color: #808080;
+    }
+    .count {
+      color: #bbbbbb;
+    }
+    .plus-button {
+      @include sprite-bg(68%);
+    }
+    .minus-button {
+      @include sprite-bg(100%);
+    }
+    .close-category {
+      @include sprite-bg(36%);
+    }
+    &.closed {
+      overflow: hidden;
+    }
+    &.main {
+      position: relative;
+    }
+  }
+  .sub-category{
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    margin-bottom: 0;
+    animation: pop 0.3s linear 1;
+    .sub-category-row {
+      padding: 10px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    @keyframes pop{
+      0%  {transform: scale(0);}
+      25%  {transform: scale(0.25);}
+      50%  {transform: scale(0.5);}
+      75%  {transform: scale(0.75);}
+      100%  {transform: scale(1);}
+    }
+  }
+}
+
+.close-animation {
+  animation: close 0.3s linear 1 !important;
+}
+@keyframes close{
+  0%  {transform: scale(1);}
+  25%  {transform: scale(0.75);}
+  50%  {transform: scale(0.5);}
+  75%  {transform: scale(0.25);}
+  100%  {transform: scale(0);}
+}
+.white-bg {
+  background: #ffffff;
+}
+.grey-bg {
+  background: #f8f8f8;
+}
+.darker-grey-bg {
+  background-color: #f0f0f0 !important;
+}
